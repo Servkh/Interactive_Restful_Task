@@ -1,0 +1,27 @@
+<fieldset>
+  <legend>Restful Task Interactive</legend>
+  <div class="gettasks">
+    <h1>Restful Tasks API</h1>
+    <button (click)="getTasksFromService()">GET ALL TASKS!</button>
+  </div>
+</fieldset>
+
+<fieldset *ngIf="tasks.length >= 1">
+  <legend>Show Tasks</legend>
+  <div class="listoftasks">
+    <div *ngFor="let task of tasks">
+      <p>{{ task.title }}</p>
+      <button (click)="info(task._id)">Show</button>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset *ngIf="taskById.length != 0">
+  <legend>Information</legend>
+  <div class="show">
+    <p><b>{{taskById.title}}</b></p>
+    <p>{{taskById.description}}</p>
+  </div>
+</fieldset>
+
+
